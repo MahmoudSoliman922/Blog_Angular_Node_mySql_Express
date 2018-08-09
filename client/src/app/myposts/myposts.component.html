@@ -1,0 +1,14 @@
+<ul style="list-style-type: none;">
+    <li *ngFor = "let item of contents">
+        <div style="border: 1px solid skyblue; padding:10px;">
+    <div class="card my-4">
+    <img width="400" height="300" src="{{item.imgUrl}}" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{item.contnet}}</p>
+      <button (click)="editPost(this.item.id,this.item.imgUrl,this.item.contnet)" class="btn btn-primary">Edit Post</button>
+      <button (click)="deletePost(this.item.id)" class="btn btn-primary">Delete Post</button>
+    </div>
+  </div>
+  </div>
+  </li>
+</ul>

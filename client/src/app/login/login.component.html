@@ -1,0 +1,24 @@
+<!-- Input Fields for Email, Name and Password-->
+    <div *ngIf ="(logvisible) || (regvisible) || (regvisible && isLogged)" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input  id="email" type="email" class="form-control" name="email" [(ngModel)]="user.email" placeholder="Email Address">
+    </div>
+    <div *ngIf ="(logvisible) || (regvisible) || (regvisible && isLogged)" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input  id="password" type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Password">
+      </div>
+        <input *ngIf = "(regvisible) || (regvisible && isLogged)" class="form-control" name="name" [(ngModel)]="user.name" placeholder="Name">
+<!-- Buttons for login/Register/Edit Account/Submit Edit/Backs-->
+<!--Log-in Buttons Form-->
+    <button *ngIf ="logvisible && !regvisible && !isLogged" (click)="doLog()" class="btn btn-primary">Login</button>
+    <button *ngIf ="logvisible && !regvisible && !isLogged" (click)="goReg()" class="btn btn-primary">Go to Registeration</button>
+<!--Registration Buttons Form-->
+    <button *ngIf ="!logvisible && regvisible && !isLogged" (click)="doReg()" class="btn btn-primary">Register</button>
+    <button *ngIf ="!logvisible && regvisible && !isLogged" (click)="goLog()" class="btn btn-primary">Go to Login</button>
+<!--Home Buttons Form-->
+    <button *ngIf ="!logvisible && !regvisible && isLogged" (click)="goEdit()" class="btn btn-primary">Edit My Account</button>
+    <button *ngIf ="!logvisible && !regvisible && isLogged" (click)="goOut()" class="btn btn-primary">Sign-out</button>
+<!--Edit Buttons Form-->
+    <button *ngIf ="!logvisible && regvisible && isLogged" (click)="doEdit()" class="btn btn-primary">Submit New Data</button>
+    <button *ngIf ="!logvisible && regvisible && isLogged" (click)="doDelete()" class="btn btn-primary">Delete My Account</button>
+    <button *ngIf ="!logvisible && regvisible && isLogged" (click)="goHome()" class="btn btn-primary">Back to Home</button>

@@ -1,0 +1,11 @@
+<div *ngIf ="classReference.islogged" class="form-group shadow-textarea">
+  <br>
+  <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" [(ngModel)]="thisClass.postData.txt" rows="2" placeholder="Write something here..."></textarea>
+    <br>
+    <div class="col-xs-10">
+        <input class="form-control" id="ex1" [(ngModel)]="thisClass.postData.imgUrl" placeholder="Write the image url" type="text">
+      </div>
+      <button *ngIf ="thisClass.creating" (click)="createPost()" type="button" class="btn btn-dark">Post</button>
+      <button *ngIf ="thisClass.editing" (click)="editMyPost()" type="button" class="btn btn-dark">Edit Post</button>
+      <button *ngIf ="thisClass.sharing" (click)="shareMyPost()" type="button" class="btn btn-dark">Share Post</button>
+    </div>

@@ -1,0 +1,15 @@
+<ul style="list-style-type: none;">
+    <li *ngFor = "let item of contents">
+      <div style="border: 1px solid skyblue; padding:10px;">
+      <img class="card-img-top" style="width:100%; max-width:800px;" src="{{item.imgUrl}}" alt="Card image cap">
+
+        <div class="card-body">
+          <p class="card-text" style="word-wrap: break-word;">{{item.contnet}}</p>
+          <p class="card-text" style="word-wrap: break-word;">{{item.imgUrl}}</p>
+          <a (click)="sharePost(this.item.parentID , this.item.imgUrl,this.item.contnet)" class="btn btn-primary">Share Post</a>
+        <br>
+        </div>
+        </div>
+        <br><br>
+      </li>
+  </ul>
